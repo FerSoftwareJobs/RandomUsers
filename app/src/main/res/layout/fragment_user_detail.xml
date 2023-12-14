@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv__fragment_user_detail__top_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/rectangle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/tb__fragment_user_detail__toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="36dp"
+            android:background="@color/transparent"
+            android:elevation="0dp"
+            android:theme="@style/ToolbarColoredBackArrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_back_arrow">
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv__fragment_user_detail__user_image"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="-43dp"
+            android:padding="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__top_background"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+            app:strokeColor="@color/white"
+            app:strokeWidth="3dp"
+            tools:src="@mipmap/ic_launcher" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv__fragment_user_detail__camera_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="6dp"
+            android:src="@drawable/ic_camera"
+            app:layout_constraintEnd_toStartOf="@id/iv__fragment_user_detail__edit_icon"
+            app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__top_background" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv__fragment_user_detail__edit_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__top_background" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv__fragment_user_detail__user_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_user"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__user_image" />
+
+        <LinearLayout
+            android:id="@+id/container__fragment_user_detail__user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/iv__fragment_user_detail__user_icon"
+            app:layout_constraintStart_toEndOf="@id/iv__fragment_user_detail__user_icon"
+            app:layout_constraintTop_toTopOf="@id/iv__fragment_user_detail__user_icon">
+
+            <TextView
+                android:id="@+id/tv__fragment_user_detail__user_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginBottom="6dp"
+                android:text="@string/fragment_user_detail_name_hint"
+                android:textAppearance="@style/label_text" />
+
+            <TextView
+                android:id="@+id/tv__fragment_user_detail__user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:textAppearance="@style/input_text"
+                android:textColor="@color/black"
+                tools:text="Laura Navarro Martinez" />
+
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider__fragment_user_detail__name_divider"
+            android:layout_width="326dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            app:dividerColor="@color/gray_light"
+            app:layout_constraintStart_toStartOf="@id/container__fragment_user_detail__user_name"
+            app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__user_icon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv__fragment_user_detail__email_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="47dp"
+            android:src="@drawable/ic_mail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__user_icon" />
+
+        <LinearLayout
+            android:id="@+id/container__fragment_user_detail__user_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/iv__fragment_user_detail__email_icon"
+            app:layout_constraintStart_toEndOf="@id/iv__fragment_user_detail__email_icon"
+            app:layout_constraintTop_toTopOf="@id/iv__fragment_user_detail__email_icon">
+
+            <TextView
+                android:id="@+id/tv__fragment_user_detail__email_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginBottom="6dp"
+                android:text="@string/fragment_user_detail__email_hint"
+                android:textAppearance="@style/label_text" />
+
+            <TextView
+                android:id="@+id/tv__fragment_user_detail__user_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:textAppearance="@style/input_text"
+                android:textColor="@color/black"
+                tools:text="lauranavarro@gmail.com" />
+
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider__fragment_user_detail__email_divider"
+            android:layout_width="326dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@id/container__fragment_user_detail__user_name"
+            app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__email_icon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv__fragment_user_detail__gender_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="47dp"
+            android:src="@drawable/ic_gender"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__email_icon" />
+
+        <LinearLayout
+            android:id="@+id/container__fragment_user_detail__user_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/iv__fragment_user_detail__gender_icon"
+            app:layout_constraintStart_toEndOf="@id/iv__fragment_user_detail__gender_icon"
+            app:layout_constraintTop_toTopOf="@id/iv__fragment_user_detail__gender_icon">
+
+            <TextView
+                android:id="@+id/tv__fragment_user_detail__gender_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginBottom="6dp"
+                android:text="@string/fragment_user_detail__gender_hint"
+                android:textAppearance="@style/label_text" />
+
+            <TextView
+                android:id="@+id/tv__fragment_user_detail__user_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:textAppearance="@style/input_text"
+                android:textColor="@color/black"
+                tools:text="Mujer" />
+
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider__fragment_user_detail__gender_divider"
+            android:layout_width="326dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@id/container__fragment_user_detail__user_name"
+            app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__gender_icon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv__fragment_user_detail__calendar_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="47dp"
+            android:src="@drawable/ic_calendar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__gender_icon" />
+
+        <LinearLayout
+            android:id="@+id/container__fragment_user_detail__user_register_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/iv__fragment_user_detail__calendar_icon"
+            app:layout_constraintStart_toEndOf="@id/iv__fragment_user_detail__calendar_icon"
+            app:layout_constraintTop_toTopOf="@id/iv__fragment_user_detail__calendar_icon">
+
+            <TextView
+                android:id="@+id/tv__fragment_user_detail__register_date_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginBottom="6dp"
+                android:text="@string/fragment_user_detail__register_date_hint"
+                android:textAppearance="@style/label_text" />
+
+            <TextView
+                android:id="@+id/tv__fragment_user_detail__user_register_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:textAppearance="@style/input_text"
+                android:textColor="@color/black"
+                tools:text="11/05/2018" />
+
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider__fragment_user_detail__calendar_divider"
+            android:layout_width="326dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@id/container__fragment_user_detail__user_name"
+            app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__calendar_icon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv__fragment_user_detail__phone_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="47dp"
+            android:src="@drawable/ic_phone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__calendar_icon" />
+
+        <LinearLayout
+            android:id="@+id/container__fragment_user_detail__user_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/iv__fragment_user_detail__phone_icon"
+            app:layout_constraintStart_toEndOf="@id/iv__fragment_user_detail__phone_icon"
+            app:layout_constraintTop_toTopOf="@id/iv__fragment_user_detail__phone_icon">
+
+            <TextView
+                android:id="@+id/tv__fragment_user_detail__register_phone_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginBottom="6dp"
+                android:text="@string/fragment_user_detail__phone_hint"
+                android:textAppearance="@style/label_text" />
+
+            <TextView
+                android:id="@+id/tv__fragment_user_detail__user_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:textAppearance="@style/input_text"
+                android:textColor="@color/black"
+                tools:text="+34 665587115" />
+
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider__fragment_user_detail__phone_divider"
+            android:layout_width="326dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            app:dividerColor="@color/gray_light"
+            app:layout_constraintStart_toStartOf="@id/container__fragment_user_detail__user_name"
+            app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__phone_icon" />
+
+        <TextView
+            android:id="@+id/tv__fragment_user_detail__register_address_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="22dp"
+            android:text="@string/fragment_user_detail__address_hint"
+            android:textAppearance="@style/label_text"
+            app:layout_constraintStart_toStartOf="@id/container__fragment_user_detail__user_name"
+            app:layout_constraintTop_toBottomOf="@id/divider__fragment_user_detail__phone_divider" />
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/fragment__fragment_user_detail__map"
+            android:layout_width="326dp"
+            android:layout_height="143dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="50dp"
+            android:contentDescription="@string/cd__map_location"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/container__fragment_user_detail__user_name"
+            app:layout_constraintTop_toBottomOf="@id/tv__fragment_user_detail__register_address_hint" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv__item_user_list__user_image"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+        tools:src="@mipmap/ic_launcher" />
+
+    <LinearLayout
+        android:id="@+id/container__item_user_list__user_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/iv__item_user_list__user_image"
+        app:layout_constraintStart_toEndOf="@id/iv__item_user_list__user_image"
+        app:layout_constraintTop_toTopOf="@id/iv__item_user_list__user_image">
+
+        <TextView
+            android:id="@+id/tv__item_user_list__user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="6dp"
+            android:textAppearance="@style/name_text"
+            android:textColor="@color/black"
+            tools:text="Andrés Martínez" />
+
+        <TextView
+            android:id="@+id/tv__item_user_list__user_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textAppearance="@style/email_text"
+            tools:text="andres.mart@gmail.com" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv__item_user_list__detail_image"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_go_to_detail"
+        android:tint="@color/gray_light"
+        app:layout_constraintBottom_toBottomOf="@id/iv__item_user_list__user_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv__item_user_list__user_image" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider__item_user_list__final_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        app:dividerColor="@color/gray_light"
+        app:layout_constraintStart_toStartOf="@id/container__item_user_list__user_data"
+        app:layout_constraintTop_toBottomOf="@id/iv__item_user_list__user_image" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

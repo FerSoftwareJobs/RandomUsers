@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="Base.Theme.RandomUsers" parent="Theme.Material3.DayNight.NoActionBar" />
+
+    <style name="Theme.RandomUsers" parent="Base.Theme.RandomUsers" />
+
+    <style name="ToolbarColoredBackArrow" parent="Base.Theme.RandomUsers">
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+</resources>
