@@ -16,8 +16,9 @@ class RepositoryModule {
     @Provides
     @Singleton
     fun provideUsersRepository(
-        usersApi: UsersApi
+        usersApi: UsersApi,
     ): UsersRepository =
-        UsersRepositoryImpl(usersApi)
+        UsersRepositoryImpl(
+            usersApi)
 
 }

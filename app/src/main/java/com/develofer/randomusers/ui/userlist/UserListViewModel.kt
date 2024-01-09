@@ -13,17 +13,64 @@ import javax.inject.Inject
 
 @HiltViewModel
 class UserListViewModel @Inject constructor(
-    private val getUsersDataUseCase: GetUsersUseCase
+    private val getUsersUseCase: GetUsersUseCase
 ): ViewModel() {
 
+    init {
+        getUsers()
+    }
+
     private val usersLiveData: MutableLiveData<List<UserDomain>> = MutableLiveData()
+    private val usersList: MutableList<UserDomain> = mutableListOf()
+    private var usersFilteredList: MutableList<UserDomain> = mutableListOf()
+    private var currentPage = 1
+    private var isShowingRawList = true
+
+    fun getCurrentPage() = currentPage
+
+    fun addUsers(users: List<UserDomain>) {
+        usersList.addAll(users)
+    }
+
     fun getUsersLiveData() = usersLiveData as LiveData<List<UserDomain>>
 
-    fun getUsers(page: Int) {
+    fun getUsers() {
         viewModelScope.launch(Dispatchers.IO) {
-            getUsersDataUseCase(page).collect {
-                usersLiveData.postValue(it)
+            getUsersUseCase(currentPage).collect {
+                usersList.addAll(removeDuplicates(it))
+                usersLiveData.postValue(usersList.toList())
             }
         }
     }
+
+    fun increasePage() {
+        currentPage++
+    }
+
+    private fun removeDuplicates(newUsersList: List<UserDomain>): List<UserDomain> =
+        newUsersList.distinctBy { it.login.uuid }
+
+    fun filterByName(searchText: String) {
+        usersFilteredList = usersList.filter {
+            it.name.first.contains(searchText, ignoreCase = true)
+        }.toMutableList()
+        usersLiveData.postValue(usersFilteredList.toList())
+        isShowingRawList = false
+    }
+
+    fun filterByEmail(searchText: String) {
+        usersFilteredList = usersList.filter {
+            it.email.contains(searchText, ignoreCase = true)
+        }.toMutableList()
+        usersLiveData.postValue(usersFilteredList.toList())
+        isShowingRawList = false
+    }
+
+    fun showRawList() {
+        usersLiveData.postValue(usersList.toList())
+        isShowingRawList = true
+    }
+
+    fun isShowingRawList(): Boolean = isShowingRawList
+
 }

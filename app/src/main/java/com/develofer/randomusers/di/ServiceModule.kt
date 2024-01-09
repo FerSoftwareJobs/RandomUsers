@@ -1,7 +1,7 @@
 package com.develofer.randomusers.di
 
+import com.develofer.randomusers.data.constants.WsConstants.BASE_URL
 import com.develofer.randomusers.data.source.remote.api.UsersApi
-import com.develofer.randomusers.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,7 +12,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class RemoteModule {
+class ServiceModule {
 
     @[Provides Singleton]
     fun provideUsersApi(): UsersApi =

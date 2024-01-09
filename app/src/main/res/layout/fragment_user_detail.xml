@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
                 android:layout_marginBottom="6dp"
-                android:text="@string/fragment_user_detail_name_hint"
+                android:text="@string/fragment_user_detail__name_hint"
                 android:textAppearance="@style/label_text" />
 
             <TextView
@@ -108,11 +108,13 @@
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/divider__fragment_user_detail__name_divider"
-            android:layout_width="326dp"
+            android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             app:dividerColor="@color/gray_light"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/container__fragment_user_detail__user_name"
             app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__user_icon" />
 
@@ -157,10 +159,13 @@
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/divider__fragment_user_detail__email_divider"
-            android:layout_width="326dp"
+            android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:dividerColor="@color/gray_light"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/container__fragment_user_detail__user_name"
             app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__email_icon" />
 
@@ -205,10 +210,13 @@
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/divider__fragment_user_detail__gender_divider"
-            android:layout_width="326dp"
+            android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:dividerColor="@color/gray_light"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/container__fragment_user_detail__user_name"
             app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__gender_icon" />
 
@@ -253,10 +261,13 @@
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/divider__fragment_user_detail__calendar_divider"
-            android:layout_width="326dp"
+            android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:dividerColor="@color/gray_light"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/container__fragment_user_detail__user_name"
             app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__calendar_icon" />
 
@@ -301,11 +312,13 @@
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/divider__fragment_user_detail__phone_divider"
-            android:layout_width="326dp"
+            android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             app:dividerColor="@color/gray_light"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/container__fragment_user_detail__user_name"
             app:layout_constraintTop_toBottomOf="@id/iv__fragment_user_detail__phone_icon" />
 
@@ -322,13 +335,15 @@
 
         <com.google.android.gms.maps.MapView
             android:id="@+id/fragment__fragment_user_detail__map"
-            android:layout_width="326dp"
+            android:layout_width="match_parent"
             android:layout_height="143dp"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="70dp"
             android:layout_marginTop="11dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="50dp"
             android:contentDescription="@string/cd__map_location"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/container__fragment_user_detail__user_name"
             app:layout_constraintTop_toBottomOf="@id/tv__fragment_user_detail__register_address_hint" />
 

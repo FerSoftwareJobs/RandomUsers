@@ -47,7 +47,7 @@ class UserListAdapter(private val context: Context, private val onItemClick: (Us
 
     private class CharacterDiffCallback : DiffUtil.ItemCallback<UserDomain>() {
         override fun areItemsTheSame(oldItem: UserDomain, newItem: UserDomain): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.login.uuid == newItem.login.uuid
         }
 
         override fun areContentsTheSame(oldItem: UserDomain, newItem: UserDomain): Boolean {

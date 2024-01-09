@@ -1,7 +1,7 @@
 package com.develofer.randomusers.data.source.remote.api
 
+import com.develofer.randomusers.data.constants.AppConstants.USERS_COUNT
 import com.develofer.randomusers.data.source.remote.response.UserResponseDTO
-import com.develofer.randomusers.utils.Constants.USERS_COUNT
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

@@ -28,7 +28,6 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class UserDetailFragment: Fragment(), OnMapReadyCallback {
 
@@ -45,12 +44,33 @@ class UserDetailFragment: Fragment(), OnMapReadyCallback {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentUserDetailBinding.inflate(inflater, container, false)
-        user = args.user
+        this.user = args.user
 
         setUpView()
         setUpMap(savedInstanceState)
 
         return binding?.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mapView.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mapView.onPause()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mapView.onDestroy()
+        binding = null
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        mapView.onLowMemory()
     }
 
     private fun setUpView() {
@@ -103,7 +123,7 @@ class UserDetailFragment: Fragment(), OnMapReadyCallback {
         binding?.apply {
             mapView = fragmentFragmentUserDetailMap
             tvFragmentUserDetailUserName.text = getString(
-                R.string.user_detail_fragment__user_complete_name,
+                R.string.fragment_user_detail__complete_name,
                 user?.name?.title,
                 user?.name?.first,
                 user?.name?.last
@@ -140,27 +160,6 @@ class UserDetailFragment: Fragment(), OnMapReadyCallback {
         googleMap = map
         googleMap.addMarker(MarkerOptions().position(targetLocation).title("Mi Marcador"))
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(targetLocation, 7f))
-    }
-
-    override fun onResume() {
-        super.onResume()
-        mapView.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-        mapView.onPause()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        mapView.onDestroy()
-        binding = null
-    }
-
-    override fun onLowMemory() {
-        super.onLowMemory()
-        mapView.onLowMemory()
     }
 
 }

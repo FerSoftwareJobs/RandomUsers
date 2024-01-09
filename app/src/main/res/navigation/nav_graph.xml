@@ -13,7 +13,9 @@
 
         <action
             android:id="@+id/action_list_fragment_to_detail_fragment"
-            app:destination="@id/detail_fragment" />
+            app:destination="@id/detail_fragment"
+            app:popUpTo="@id/list_fragment"
+            app:launchSingleTop="true" />
 
     </fragment>
 

@@ -1,19 +1,34 @@
 <resources>
-
+    <!-- region app -->
     <string name="app_name">Random Users</string>
+    <!-- endregion -->
+
+    <!-- region content description -->
     <string name="cd__map_location">map_location</string>
-    <string name="cd_back_button">Botón atrás</string>
-    <string name="contacts">Contactos</string>
+    <!-- endregion -->
 
+    <!-- region user_list_adapter -->
     <string name="user_list_adapter__user_name_and_surname">%1$s %2$s</string>
+    <!-- endregion -->
 
-    <string name="user_detail_fragment__user_complete_name">%1$s %2$s %3$s</string>
+    <!-- region fragment_user_list -->
+    <string name="fragment_user_list__contacts">Contactos</string>
+    <!-- endregion -->
 
-    <string name="fragment_user_detail_name_hint">Nombre y apellidos</string>
+    <!-- region fragment_user_detail -->
+    <string name="fragment_user_detail__complete_name">%1$s %2$s %3$s</string>
+    <string name="fragment_user_detail__name_hint">Nombre y apellidos</string>
     <string name="fragment_user_detail__email_hint">Email</string>
     <string name="fragment_user_detail__gender_hint">Género</string>
     <string name="fragment_user_detail__register_date_hint">Fecha de registro</string>
     <string name="fragment_user_detail__phone_hint">Teléfono</string>
     <string name="fragment_user_detail__address_hint">Dirección</string>
+    <!-- endregion -->
+
+    <!-- region main_menu -->
+    <string name="main_menu__search">Buscar</string>
+    <string name="main_menu__filter_by_name">Filtrar por Nombre</string>
+    <string name="main_menu__filter_by_email">Filtrar por Email</string>
+    <!-- endregion -->
 
 </resources>

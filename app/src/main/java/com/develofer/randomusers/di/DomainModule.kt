@@ -13,7 +13,7 @@ import dagger.hilt.components.SingletonComponent
 class DomainModule {
 
     @Provides
-    fun bindGetUsersUseCase(repository: UsersRepository): GetUsersUseCase =
+    fun provideGetUsersUseCase(repository: UsersRepository): GetUsersUseCase =
         GetUsersUseCaseImpl(repository)
 
 }
